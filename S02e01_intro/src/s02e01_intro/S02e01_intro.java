@@ -6,9 +6,6 @@ public class S02e01_intro {
        
         Scanner ler = new Scanner(System.in);
         Carro carro = new Carro();   
-        int n = 1;
-        int v[]= new int[n];
-        int i;
         
         while(true){
            int op;
@@ -83,7 +80,8 @@ public class S02e01_intro {
                     
                 case 7:
                     //encerrar
-                        System.exit(0);   
+                    System.out.println("Boa Viagem!");
+                    System.exit(0);   
                     break;    
                     
                 default:

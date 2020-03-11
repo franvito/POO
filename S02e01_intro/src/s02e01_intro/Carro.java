@@ -11,8 +11,9 @@ public class Carro {
     
     //METODO CONSTRUTOR
     public Carro(){
-        
+  
     }
+    
     public Carro(int maxPessoa, int numPessoa, float gasolina, float maxGasolina, float odometro){
         this.maxPessoa = maxPessoa;
         this.numPessoa = numPessoa;
@@ -65,7 +66,7 @@ public class Carro {
     public void embarcar(int pe){
         if((this.getNumpessoa()+pe)>this.getMaxpessoa()){
             System.out.println("Lotado");
-        }else if(this.getNumpessoa()<this.getMaxpessoa()){
+        }else if((this.getNumpessoa()+pe)<=this.getMaxpessoa()){
             this.setNumpessoa(this.getNumpessoa()+ pe);
             System.out.println("Embarcou!");
         }
@@ -73,9 +74,9 @@ public class Carro {
     public void desembarcar(int pes){
         if(this.getNumpessoa()==0){
             System.out.println("Não tem ninguém");
-            }else if(this.getNumpessoa()<pes){
+        }else if(this.getNumpessoa()<pes){
             System.out.println("Não tem esse tanto de pessoas!");
-        }else if(this.getNumpessoa()>pes){
+        }else if(this.getNumpessoa()>=pes){
             this.setNumpessoa(this.getNumpessoa()-pes);
             System.out.println("Desembarcou!");
         } 
