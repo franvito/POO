@@ -1,6 +1,8 @@
 package projetolapiseira;
 
 public class Grafite {
+
+    static Object gra;
     //VARIAVEIS
     private float ponta;
     private int tamanho;

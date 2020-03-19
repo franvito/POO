@@ -6,7 +6,6 @@ public class ProjetoLapiseira {
     public static void main(String[] args) {
         
         Lapiseira lap = new Lapiseira();
-        
         Scanner ler = new Scanner(System.in);
         
         while(true){
@@ -14,12 +13,13 @@ public class ProjetoLapiseira {
             int op;
             System.out.println("O que deseja fazer?");
             System.out.println("1: Criar Lapiseira.");
-            System.out.println("2: Escrever.");
-            System.out.println("3: Apagar.");
-            System.out.println("4: Expor Ponta.");
-            System.out.println("5: Guardar Ponta.");
-            System.out.println("6: Status.");
-            System.out.println("7: Terminar.");
+            System.out.println("2: Inserir Grafite.");
+            System.out.println("3: Escrever.");
+            System.out.println("4: Apagar.");
+            System.out.println("5: Expor Ponta.");
+            System.out.println("6: Guardar Ponta.");
+            System.out.println("7: Status.");
+            System.out.println("8: Terminar.");
             op = ler.nextInt();
             
             switch(op){
@@ -28,9 +28,6 @@ public class ProjetoLapiseira {
                     //CRIAR LAPISEIRA
                     String mc;
                     int bor;
-                    float pt;
-                    int tam;
-                    
                     System.out.println("Digite a marca: ");
                     ler.nextLine();
                     mc = ler.nextLine();
@@ -38,15 +35,21 @@ public class ProjetoLapiseira {
                     System.out.println("Digite a quatidade de borracha: ");
                     bor = ler.nextInt();
                     lap.setBorracha(bor);
-                    System.out.println("Digite a ponta do Grafite: ");
-                    pt = ler.nextFloat();
-                    lap.gra.setPonta(pt);
-                    System.out.println("Digite o tamanho do Grafite: ");
-                    tam = ler.nextInt();
-                    lap.gra.setTamanho(tam);
+                    
                     break;
                 
                 case 2:
+                    int tam;
+                    float pt;
+                    System.out.println("Digite a ponta: ");
+                    pt = ler.nextFloat();
+                    System.out.println("Digite o tamanho: ");
+                    tam = ler.nextInt();
+                    lap.inserirPonta(new Grafite(pt, tam));
+                    
+                    break;    
+                
+                case 3:
                     //ESCREVER
                     int es;
                     System.out.println("Quanto deseja escrever? ");
@@ -54,7 +57,7 @@ public class ProjetoLapiseira {
                     lap.escrever(es);
                     break;
                 
-                case 3:
+                case 4:
                     //APAGAR
                     int ap;
                     System.out.println("Quanto deseja apagar?");
@@ -62,29 +65,29 @@ public class ProjetoLapiseira {
                     lap.apagar(ap);
                     break;    
                 
-                case 4:
+                case 5:
                     //EXPOR PONTA
                     lap.exporPonta();
                     System.out.println("Ponta exposta!");
                     break;    
                 
-                case 5:
+                case 6:
                     //GUARDAR PONTA
                     lap.guardarPonta();
                     System.out.println("Ponta guardada!");
                     break;    
                     
-                case 6:
+                case 7:
                     //STATUS
                     lap.status();
                     break;
                 
-                case 7:
+                case 8:
                     //TERMINAR
                     System.out.println("Até.");
                     System.exit(0);
                     break;
-                
+
                 default:
                     System.out.println("Ação inválida!");
                     break;
