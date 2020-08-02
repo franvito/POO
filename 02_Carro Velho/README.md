@@ -1,5 +1,5 @@
 -O que você fez:
-Fiz as todas funcionalidas que pediu em sala.
+Fiz todas funcionalidas que pediu em sala.
 -Com quem e como você fez:
 Sozinho, mas com alguns toques seus.
 -O que aprendeu e sabe fazer:
