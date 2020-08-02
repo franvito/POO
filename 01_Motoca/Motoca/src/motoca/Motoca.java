@@ -15,7 +15,7 @@ public class Motoca {
 		break;
             }else if(ui[0].equals("embarcar")) { //nome  idade
 		int idade = Integer.parseInt(ui[2]);
-		moto.embarcar(moto.pessoa.nome(ui[1]), moto.pessoa.idade);
+		moto.embarcar(new Pessoa(ui[1], Integer.parseInt(ui[2])));
             }else if(ui[0].equals("desembarcar")) {
 		moto.desembarcar();
             }else if(ui[0].equals("dirigir")) {
