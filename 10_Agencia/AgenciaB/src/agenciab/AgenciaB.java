@@ -7,7 +7,6 @@ public class AgenciaB {
         
         Scanner scan = new Scanner(System.in);
         Conta conta = new Conta(0);
-        //Operacao op = new Operacao("abertura", 0, 0);
                 
         while(true){
             

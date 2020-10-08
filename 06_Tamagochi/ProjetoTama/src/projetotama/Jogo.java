@@ -40,9 +40,9 @@ public class Jogo {
                 if(tama.getEnergia()<=0 ||tama.getSaciedade()<=0||tama.getLimpeza()<=0){
                     if(tama.getEnergia()<=0)
                            System.out.println("Morreu de Fraqueza!");
-                        if(tama.getSaciedade()<=0)
+                    if(tama.getSaciedade()<=0)
                             System.out.println("Morreu de Fome!");
-                        if(tama.getLimpeza()<=0)
+                    if(tama.getLimpeza()<=0)
                             System.out.println("Morreu por falta de higiene!");
                     tama.setVivo(false);   
                 }
@@ -93,7 +93,7 @@ public class Jogo {
     }
     
     public void mostrar(){
-        System.out.print("E:"+tama.getEnergia()+"/"+tama.getMaxEnergia());
+        System.out.print(" E:"+tama.getEnergia()+"/"+tama.getMaxEnergia());
         System.out.print(" S:"+tama.getSaciedade()+"/"+tama.getMaxSaciedade());
         System.out.print(" L:"+tama.getLimpeza()+"/"+tama.getMaxLimpeza());
         System.out.print(" D:"+tama.getDiamantes());
