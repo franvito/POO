@@ -5,38 +5,21 @@ import java.util.TreeMap;
 public class User {
 
     public String username;
-    public int nextId;
     public int naoLidos;
-    
-    TreeMap<String, User> usuarios;
     
     ArrayList<Tweet> timeline;
     ArrayList<Tweet> myTweets;
     
-    
     TreeMap<String, User> seguidos;
     TreeMap<String, User> seguidores;
     
-   public User(){
-       usuarios = new TreeMap<>(); 
-   }
-    
     public User(String username){
         this.username = username;
-        //this.nextId = 0;
         this.naoLidos = 0;
         timeline = new ArrayList<>();
         myTweets = new ArrayList<>();
         seguidos = new TreeMap<>();
         seguidores = new TreeMap<>();  
-        
-    }
-    
-    public void addUser(String username){
-       
-        if(usuarios.containsKey(username))
-            return;
-        usuarios.put(username, new User(username));
         
     }
     
@@ -46,22 +29,26 @@ public class User {
             }    
             seguidos.put(other.username, other);
             other.seguidores.put(this.username, this);
-            System.out.println("Segudido com sucesso!");
+            System.out.println("Seguido com sucesso!");
     }
     
-    public void twitar(String username, String msg){
+    public void twitar(Tweet tw){
         
-        this.timeline.add(new Tweet(nextId, username, msg));
+        this.timeline.add(tw);
+        this.naoLidos+= 1;
         for(User u : seguidores.values()){
-            u.timeline.add(new Tweet(nextId, username, msg));
+            u.timeline.add(tw);
+            u.naoLidos+=1;
         }
-        nextId+=1;
         System.out.println("sucesso");
     }
     
     public void getTimeline(User user){
-        for(int i = 0; i < user.timeline.size();i++){
+        if(naoLidos == 0)
+            System.out.println("Timeline vazia!");
+        for(int i = user.timeline.size() - user.naoLidos; i < user.timeline.size();i++){
             System.out.println(user.timeline.get(i));
+            naoLidos = 0;
         }
     }
     
@@ -74,11 +61,7 @@ public class User {
         }
     }
     
-    public void listarUsuarios(){
-        for(User use : usuarios.values()){
-            System.out.println(use);  
-        }
-    }
+    
     
     public String toString(){
         String saida = username + " \n";
